@@ -29,10 +29,19 @@ angularApp.controller('addController', ['$http', '$scope', '$timeout', function(
 	vm.deleteName = '';
 
 	vm.delete = function() {
-		$http.delete('/deleteMoot', vm.delteName).then(function(response) {
-			console.log('Successfully deleted')
-		}).catch(function(error){
-			console.log('Error removing from database', error)
-		})
+		$http({
+        url: '/deleteMoot',
+        method: 'DELETE',
+        data: {
+            name: vm.deleteName
+        },
+        headers: {
+            "Content-Type": "application/json;charset=utf-8"
+        }
+    }).then(function(res) {
+        console.log(res.data);
+    }, function(error) {
+        console.log(error);
+    });
 	}
 }])
