@@ -43,5 +43,6 @@ angularApp.controller('addController', ['$http', '$scope', '$timeout', function(
     }, function(error) {
         console.log(error);
     });
+    vm.deleteName = '';
 	}
 }])
