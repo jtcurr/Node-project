@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="angularApp">
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+	<div ng-controller="myController">
+		I am the biggest moot({{ mootName }})
+		</div>
+		<div ng-controller="addController as c">
+			<ul ng-repeat="bork in c.mootNames track by $index">
+				<li>{{ bork.name }}, {{ bork.size }}, {{ bork.badnessLevel }}</li>
+			</ul>
+		</div>
+	<form ng-controller="addController as vm" ng-submit="vm.submit()" >
+		Name:<input type="text" name="name" ng-model="vm.name"><br>
+		Size:<input type="text" name="size" ng-model="vm.size"><br>
+		Badness level:<input type="text" name="badnessLevel" ng-model="vm.level"><br>
+		<input type="submit" id="submit" value="Submit" />
+	</form>
+	<script src="public/angular/app.js"></script>
+	<script src="public/angular/controllers/myController.js"></script>
+	<script src="public/angular/controllers/addController.js"></script>
+</body>
+</html>
