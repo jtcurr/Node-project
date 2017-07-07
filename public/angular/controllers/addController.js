@@ -10,6 +10,7 @@ angularApp.controller('addController', ['$http', '$scope', '$timeout', function(
 		})
   }
   vm.getAll();
+  
 	vm.submit = function() {
 			vm.data = {
 				name: vm.name,
