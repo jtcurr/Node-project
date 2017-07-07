@@ -44,6 +44,13 @@ module.exports.removeMoot = function(req, res) {
 	})
 }
 
-module.exports.updateMoot = function(req, req) {
-
+module.exports.updateMoot = function(req, res) {
+	Moot.findOneAndUpdate({name: req.body.name}, {$set: {name: req.body.newName}}, function(err, data) {
+		if(err) {
+			console.log('Error updating');
+		}
+		else{
+			res.status(200).send({message: 'updated successfully'});
+		}
+	})
 }
