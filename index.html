@@ -35,7 +35,7 @@
 		<div class="form-group">
 			Badness level:<input type="text" class="form-control" name="badnessLevel" ng-model="vm.level">
 		</div>
-		<input type="submit" class="btn btn-primary" id="submit" value="Submit" />
+		<input type="submit" class="btn btn-primary" id="submit" value="Add moot" />
 	</form>
 
 	<br>
@@ -47,9 +47,19 @@
 		<div class="form-group">
 			<input type="text" class="form-control" name="name" ng-model="vm.deleteName">
 		</div>
-		<input type="submit" class="btn btn-primary" id="delete" value="Delete">
+		<input type="submit" class="btn btn-primary" id="delete" value="Delete moot">
 	</form>
-
+	<br>
+	<form ng-controller="updateController as vm" ng-submit="vm.update()">
+		Update Moot
+		<br>
+		<div class="form-group">
+			<input type="text" class="form-control" name="name" ng-model="vm.updateSelector">
+		</div>
+		<input type="submit" class="btn btn-primary" id="update" value="Update moot">
+	</form>
+	<br>
+	<br>
 	<div id="player"></div>
 
 	<script src="public/angular/app.js"></script>
@@ -57,5 +67,7 @@
 	<script src="public/angular/controllers/myController.js"></script>
 	<script src="public/angular/controllers/deleteController.js"></script>
 	<script src="public/angular/controllers/addController.js"></script>
+	<script src="public/angular/controllers/updateController.js"></script>
+
 </body>
 </html>

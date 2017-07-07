@@ -31,4 +31,8 @@ app.delete('/deleteMoot', function(req, res) {
 	mootController.removeMoot(req, res);
 })
 
+app.put('/updateMoot', function(req, res) {
+	mootController.updateMoot(req, res);
+})
+
 app.listen(port);

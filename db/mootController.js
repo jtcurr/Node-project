@@ -35,7 +35,6 @@ module.exports.addMoot = function(req, res) {
 }
 
 module.exports.removeMoot = function(req, res) {
-	console.log(req.body);
 	Moot.remove({name: req.body.name}, function(err) {
 		if(err) {
 			console.log('!!!!!', err)
@@ -43,4 +42,8 @@ module.exports.removeMoot = function(req, res) {
 			res.status(200).send({ message: "Moot removed" });
 		}
 	})
+}
+
+module.exports.updateMoot = function(req, req) {
+
 }
