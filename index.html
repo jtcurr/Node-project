@@ -19,7 +19,7 @@
 		Badness level:<input type="text" name="badnessLevel" ng-model="vm.level"><br>
 		<input type="submit" id="submit" value="Submit" />
 	</form>
-	<form ng-controller="addController as vm" ng-submit="vm.delete()">
+	<form ng-controller="deleteController as vm" ng-submit="vm.delete()">
 		DELETE MOOTS FROM DATABASE
 		<br>
 		<input type="text" name="name" ng-model="vm.deleteName">
@@ -27,6 +27,7 @@
 	</form>
 	<script src="public/angular/app.js"></script>
 	<script src="public/angular/controllers/myController.js"></script>
+	<script src="public/angular/controllers/deleteController.js"></script>
 	<script src="public/angular/controllers/addController.js"></script>
 </body>
 </html>

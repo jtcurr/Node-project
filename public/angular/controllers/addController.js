@@ -26,23 +26,4 @@ angularApp.controller('addController', ['$http', '$scope', '$timeout', function(
 		console.log('Error adding to database ', error)
 	})
 	}
-	vm.deleteName = '';
-
-	vm.delete = function() {
-		$http({
-        url: '/deleteMoot',
-        method: 'DELETE',
-        data: {
-            name: vm.deleteName
-        },
-        headers: {
-            "Content-Type": "application/json;charset=utf-8"
-        }
-    }).then(function(res) {
-        console.log(res.data);
-    }, function(error) {
-        console.log(error);
-    });
-    vm.deleteName = '';
-	}
 }])
