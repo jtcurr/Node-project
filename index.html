@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div ng-controller="myController">
-		I am the biggest moot({{ mootName }})
+		<h3>I am the biggest moot({{ mootName }})</h3>
 		</div>
 		<div ng-controller="addController as c">
 		<table class="table table-striped">
@@ -26,16 +26,28 @@
 		</table>
 		</div>
 	<form ng-controller="addController as vm" ng-submit="vm.submit()" >
-		Name:<input type="text" name="name" ng-model="vm.name"><br>
-		Size:<input type="text" name="size" ng-model="vm.size"><br>
-		Badness level:<input type="text" name="badnessLevel" ng-model="vm.level"><br>
-		<input type="submit" id="submit" value="Submit" />
+		<div class="form-group">
+			Name:<input type="text" class="form-control" name="name" ng-model="vm.name">
+		</div>
+		<div class="form-group">
+				Size:<input type="text" class="form-control" name="size" ng-model="vm.size">
+		</div>
+		<div class="form-group">
+			Badness level:<input type="text" class="form-control" name="badnessLevel" ng-model="vm.level">
+		</div>
+		<input type="submit" class="btn btn-primary" id="submit" value="Submit" />
 	</form>
+
+	<br>
+	<br>
+
 	<form ng-controller="deleteController as vm" ng-submit="vm.delete()">
 		DELETE MOOTS FROM DATABASE
 		<br>
-		<input type="text" name="name" ng-model="vm.deleteName">
-		<input type="submit" id="delete" value="DELETE">{{vm.deleteName}}
+		<div class="form-group">
+			<input type="text" class="form-control" name="name" ng-model="vm.deleteName">
+		</div>
+		<input type="submit" class="btn btn-primary" id="delete" value="DELETE">
 	</form>
 	<script src="public/angular/app.js"></script>
 	<script src="public/angular/controllers/myController.js"></script>
