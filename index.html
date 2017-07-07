@@ -10,9 +10,20 @@
 		I am the biggest moot({{ mootName }})
 		</div>
 		<div ng-controller="addController as c">
-			<ul ng-repeat="bork in c.mootNames track by $index">
-				<li>{{ bork.name }}, {{ bork.size }}, {{ bork.badnessLevel }}</li>
-			</ul>
+		<table class="table table-striped">
+			<thead>
+				<th>Name</th>
+				<th>Size</th>
+				<th>Badness Level</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat="bork in c.mootNames">
+					<td>{{ bork.name }}</td>
+					<td>{{ bork.size }}</td>
+					<td>{{ bork.badnessLevel }}</td>
+				</tr>
+			</tbody>
+		</table>
 		</div>
 	<form ng-controller="addController as vm" ng-submit="vm.submit()" >
 		Name:<input type="text" name="name" ng-model="vm.name"><br>
