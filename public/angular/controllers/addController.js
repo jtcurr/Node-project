@@ -4,13 +4,14 @@ angularApp.controller('addController', ['$http', '$scope', '$timeout', function(
 	vm.size = '';
 	vm.level = '';
 	vm.mootNames = [];
+	
 	vm.getAll = function() {
 		$http.get('/getAllTheMoots').then(function(data) {
 			vm.mootNames = data.data
 		})
   }
   vm.getAll();
-  
+
 	vm.submit = function() {
 			vm.data = {
 				name: vm.name,

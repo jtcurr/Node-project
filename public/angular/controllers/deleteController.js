@@ -1,5 +1,5 @@
 angularApp.controller('deleteController', ['$http', function($http) {
-    
+
     var vm = this;
 
     vm.deleteName = '';
@@ -21,6 +21,5 @@ angularApp.controller('deleteController', ['$http', function($http) {
     });
     vm.deleteName = '';
     }
-
 
 }])

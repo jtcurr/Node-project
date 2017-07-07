@@ -1,8 +1,23 @@
 var mongoose = require('mongoose');
 var Moot = mongoose.model('Moot');
 
-function createMoot(name, size, badLevel) {
-
+function createMoot(name, size, badLevel, res) {
+		Moot.create({
+		name: name,
+		size: size,
+		badnessLevel: badLevel
+	}, function(err, user) {
+		if(err) {
+			console.log('all badLevel')
+			res
+				.status(400)
+				.json(err)
+			console.log(err)
+		} else {
+			console.log('good')
+			res.status(200);
+		}
+	})
 }
 
 module.exports.retreiveAllMoots =  function(req, res) {
@@ -16,22 +31,7 @@ module.exports.retreiveAllMoots =  function(req, res) {
 }
 
 module.exports.addMoot = function(req, res) {
-		Moot.create({
-		name: req.body.name,
-		size: req.body.size,
-		badnessLevel: req.body.level
-	}, function(err, user) {
-		if(err) {
-			console.log('all badLevel')
-			res
-				.status(400)
-				.json(err)
-			console.log(err)
-		} else {
-			console.log('good')
-			res.status(200).send({ error: "boo:(" });
-		}
-	})
+	createMoot(req.body.name, req.body.size, req.body.level, res);
 }
 
 module.exports.removeMoot = function(req, res) {
