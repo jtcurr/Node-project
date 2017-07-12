@@ -50,7 +50,7 @@ module.exports.updateMoot = function(req, res) {
 			console.log('Error updating');
 		}
 		else{
-			res.status(200).send({message: 'updated the moot successfully'});
+			res.status(200).send({message: 'updated the successfully'});
 		}
 	})
 }
