@@ -18,14 +18,6 @@ app.get('/theMoots/', function(req, res) {
 	res.sendFile(__dirname + '/theMoots.html');
 })
 
-app.get('/getAllTheMoots', function(req, res) {
-	mootController.retreiveAllMoots(req, res);
-})
-
-app.post('/addMoot', function(req, res) {
-	res.sendFile(__dirname + '/index.html');
-	mootController.addMoot(req, res);
-})
 
 app.delete('/deleteMoot', function(req, res) {
 	mootController.removeMoot(req, res);
