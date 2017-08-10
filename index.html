@@ -7,20 +7,17 @@
 </head>
 <body>
 	<div ng-controller="myController">
-		<h3>I am the biggest moot({{ mootName }})</h3>
 		</div>
 		<div ng-controller="addController as c">
 		<table class="table table-striped">
 			<thead>
 				<th>Name</th>
 				<th>Size</th>
-				<th>Badness Level</th>
 			</thead>
 			<tbody>
 				<tr ng-repeat="bork in c.mootNames">
 					<td>{{ bork.name }}</td>
 					<td>{{ bork.size }}</td>
-					<td>{{ bork.badnessLevel }}</td>
 				</tr>
 			</tbody>
 		</table>

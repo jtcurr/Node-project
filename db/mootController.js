@@ -8,7 +8,6 @@ function createMoot(name, size, badLevel, res) {
 		badnessLevel: badLevel
 	}, function(err, user) {
 		if(err) {
-			console.log('all badLevel')
 			res
 				.status(400)
 				.json(err)
