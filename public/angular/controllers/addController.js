@@ -18,15 +18,5 @@ angularApp.controller('addController', ['$http', '$scope', '$timeout', function(
 				size: vm.size,
 				level: vm.level
 			}
-	$http.post('/addMoot', vm.data).then(function(response) {
-		console.log('Added to database')
-			vm.mootNames.push(vm.data);
-			//returns fields to blank
-			vm.name = '';
-			vm.size = '';
-			vm.level = '';
-	}).catch(function(error) {
-		console.log('Error adding to database ', error)
-	})
 	}
 }])
