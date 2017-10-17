@@ -14,10 +14,6 @@ app.get('/', function(req, res) {
 	res.sendFile(__dirname + '/index.html');
 })
 
-app.get('/theMoots/', function(req, res) {
-	res.sendFile(__dirname + '/theMoots.html');
-})
-
 
 app.delete('/deleteMoot', function(req, res) {
 	mootController.removeMoot(req, res);
