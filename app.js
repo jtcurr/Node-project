@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
-require('./db/db.js');
+
 require('./db/mootModel.js');
 var mootController = require('./db/mootController.js');
 
